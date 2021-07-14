@@ -1,0 +1,967 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		27CA754003F6041C7E944ADC /* Pods_tedasign.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DCE19F54274455CBFB8CDC /* Pods_tedasign.framework */; };
+		92E617D72698A2B800444A02 /* PopUpWithImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92E617D62698A2B800444A02 /* PopUpWithImageView.xib */; };
+		92E617D92698A2C500444A02 /* PopUpWithImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E617D82698A2C500444A02 /* PopUpWithImageView.swift */; };
+		92E617DB2698A92E00444A02 /* PopUpTwoButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92E617DA2698A92E00444A02 /* PopUpTwoButton.xib */; };
+		92E617DD2698A9B700444A02 /* PopUpTwoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E617DC2698A9B700444A02 /* PopUpTwoButton.swift */; };
+		92E617DF2698AA6900444A02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92E617DE2698AA6900444A02 /* Assets.xcassets */; };
+		92E617E12698AF4000444A02 /* PopUpFinishSign.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92E617E02698AF3F00444A02 /* PopUpFinishSign.xib */; };
+		92E617E32698AF4D00444A02 /* PopUpFinishSign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E617E22698AF4D00444A02 /* PopUpFinishSign.swift */; };
+		92F69CDD2698789D006AB1A1 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F69CDC2698789D006AB1A1 /* UIViewExtension.swift */; };
+		92F69CDF26987DB7006AB1A1 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F69CDE26987DB7006AB1A1 /* UIColorExtension.swift */; };
+		9C10605526918CCB003AC183 /* CryptLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C10604F26918CCB003AC183 /* CryptLib.m */; };
+		9C10605626918CCB003AC183 /* ATGoogleDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C10605026918CCB003AC183 /* ATGoogleDrive.swift */; };
+		9C10605726918CCB003AC183 /* DocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C10605226918CCB003AC183 /* DocumentPicker.swift */; };
+		9C10605826918CCB003AC183 /* PKCS12.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C10605326918CCB003AC183 /* PKCS12.swift */; };
+		9C10605926918CCB003AC183 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C10605426918CCB003AC183 /* Utility.swift */; };
+		9C10605F26918E5B003AC183 /* BackupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C10605D26918E5B003AC183 /* BackupViewController.swift */; };
+		9C10606026918E5B003AC183 /* ImportKeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C10605E26918E5B003AC183 /* ImportKeyViewController.swift */; };
+		9C6F4424268A2E1800CB1F9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F4423268A2E1800CB1F9E /* AppDelegate.swift */; };
+		9C6F4426268A2E1800CB1F9E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F4425268A2E1800CB1F9E /* SceneDelegate.swift */; };
+		9C6F4428268A2E1800CB1F9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F4427268A2E1800CB1F9E /* ViewController.swift */; };
+		9C6F442B268A2E1800CB1F9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C6F4429268A2E1800CB1F9E /* Main.storyboard */; };
+		9C6F442E268A2E1800CB1F9E /* tedasign.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F442C268A2E1800CB1F9E /* tedasign.xcdatamodeld */; };
+		9C6F4433268A2E1C00CB1F9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C6F4431268A2E1C00CB1F9E /* LaunchScreen.storyboard */; };
+		9C6F443E268A2E1D00CB1F9E /* tedasignTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F443D268A2E1D00CB1F9E /* tedasignTests.swift */; };
+		9C6F4449268A2E1D00CB1F9E /* tedasignUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F4448268A2E1D00CB1F9E /* tedasignUITests.swift */; };
+		9C6F4457268DD55900CB1F9E /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F4456268DD55900CB1F9E /* MainController.swift */; };
+		C0396406BE828241996F3374 /* Pods_tedasign_tedasignUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD384D8E1CEEC220A8E6D67 /* Pods_tedasign_tedasignUITests.framework */; };
+		E2957EC12692FE5D006EF34F /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2957EC02692FE5D006EF34F /* QRScannerViewController.swift */; };
+		E2957EC32692FE6D006EF34F /* ListKeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2957EC22692FE6D006EF34F /* ListKeyViewController.swift */; };
+		E2957EC626943FFC006EF34F /* RestoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2957EC526943FFC006EF34F /* RestoreController.swift */; };
+		E2957EC826944336006EF34F /* ExtractFileToRestoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2957EC726944336006EF34F /* ExtractFileToRestoreViewController.swift */; };
+		E2957ECA2695955D006EF34F /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2957EC92695955C006EF34F /* ProgressHUD.swift */; };
+		E4677CF2C03462A7691374B5 /* Pods_tedasignTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EE18D65CFA35469BC07874B /* Pods_tedasignTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9C6F443A268A2E1D00CB1F9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C6F4418268A2E1800CB1F9E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C6F441F268A2E1800CB1F9E;
+			remoteInfo = tedasign;
+		};
+		9C6F4445268A2E1D00CB1F9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C6F4418268A2E1800CB1F9E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C6F441F268A2E1800CB1F9E;
+			remoteInfo = tedasign;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		27B0D88DE3B30151F069391A /* Pods-tedasign-tedasignUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tedasign-tedasignUITests.release.xcconfig"; path = "Target Support Files/Pods-tedasign-tedasignUITests/Pods-tedasign-tedasignUITests.release.xcconfig"; sourceTree = "<group>"; };
+		31B04F8BABA67384798DF7A9 /* Pods-tedasign-tedasignUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tedasign-tedasignUITests.debug.xcconfig"; path = "Target Support Files/Pods-tedasign-tedasignUITests/Pods-tedasign-tedasignUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		58B5E6129E745D868CBF5223 /* Pods-tedasignTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tedasignTests.debug.xcconfig"; path = "Target Support Files/Pods-tedasignTests/Pods-tedasignTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7DD9B7D4A39DFAF66DFB16F2 /* Pods-tedasign.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tedasign.debug.xcconfig"; path = "Target Support Files/Pods-tedasign/Pods-tedasign.debug.xcconfig"; sourceTree = "<group>"; };
+		7EE18D65CFA35469BC07874B /* Pods_tedasignTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tedasignTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89E6F9F61C12B0DF7ACCE877 /* Pods-tedasign.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tedasign.release.xcconfig"; path = "Target Support Files/Pods-tedasign/Pods-tedasign.release.xcconfig"; sourceTree = "<group>"; };
+		92E617D62698A2B800444A02 /* PopUpWithImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpWithImageView.xib; sourceTree = "<group>"; };
+		92E617D82698A2C500444A02 /* PopUpWithImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpWithImageView.swift; sourceTree = "<group>"; };
+		92E617DA2698A92E00444A02 /* PopUpTwoButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpTwoButton.xib; sourceTree = "<group>"; };
+		92E617DC2698A9B700444A02 /* PopUpTwoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpTwoButton.swift; sourceTree = "<group>"; };
+		92E617DE2698AA6900444A02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		92E617E02698AF3F00444A02 /* PopUpFinishSign.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpFinishSign.xib; sourceTree = "<group>"; };
+		92E617E22698AF4D00444A02 /* PopUpFinishSign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpFinishSign.swift; sourceTree = "<group>"; };
+		92F69CDC2698789D006AB1A1 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		92F69CDE26987DB7006AB1A1 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		9C10604E26918CCA003AC183 /* tedasign-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "tedasign-Bridging-Header.h"; sourceTree = "<group>"; };
+		9C10604F26918CCB003AC183 /* CryptLib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CryptLib.m; sourceTree = "<group>"; };
+		9C10605026918CCB003AC183 /* ATGoogleDrive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATGoogleDrive.swift; sourceTree = "<group>"; };
+		9C10605126918CCB003AC183 /* CryptLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CryptLib.h; sourceTree = "<group>"; };
+		9C10605226918CCB003AC183 /* DocumentPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentPicker.swift; sourceTree = "<group>"; };
+		9C10605326918CCB003AC183 /* PKCS12.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKCS12.swift; sourceTree = "<group>"; };
+		9C10605426918CCB003AC183 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		9C10605D26918E5B003AC183 /* BackupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackupViewController.swift; sourceTree = "<group>"; };
+		9C10605E26918E5B003AC183 /* ImportKeyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportKeyViewController.swift; sourceTree = "<group>"; };
+		9C106063269DFE64003AC183 /* tedasign.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = tedasign.entitlements; sourceTree = "<group>"; };
+		9C6F4420268A2E1800CB1F9E /* tedasign.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tedasign.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C6F4423268A2E1800CB1F9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9C6F4425268A2E1800CB1F9E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		9C6F4427268A2E1800CB1F9E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9C6F442A268A2E1800CB1F9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9C6F442D268A2E1800CB1F9E /* tedasign.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = tedasign.xcdatamodel; sourceTree = "<group>"; };
+		9C6F4432268A2E1C00CB1F9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9C6F4434268A2E1C00CB1F9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C6F4439268A2E1D00CB1F9E /* tedasignTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tedasignTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C6F443D268A2E1D00CB1F9E /* tedasignTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tedasignTests.swift; sourceTree = "<group>"; };
+		9C6F443F268A2E1D00CB1F9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C6F4444268A2E1D00CB1F9E /* tedasignUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tedasignUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C6F4448268A2E1D00CB1F9E /* tedasignUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tedasignUITests.swift; sourceTree = "<group>"; };
+		9C6F444A268A2E1D00CB1F9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C6F4456268DD55900CB1F9E /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		B4DCE19F54274455CBFB8CDC /* Pods_tedasign.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tedasign.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B56DDEC6FCFCCFE78C91F110 /* Pods-tedasignTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tedasignTests.release.xcconfig"; path = "Target Support Files/Pods-tedasignTests/Pods-tedasignTests.release.xcconfig"; sourceTree = "<group>"; };
+		BAD384D8E1CEEC220A8E6D67 /* Pods_tedasign_tedasignUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tedasign_tedasignUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2957EC02692FE5D006EF34F /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
+		E2957EC22692FE6D006EF34F /* ListKeyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListKeyViewController.swift; sourceTree = "<group>"; };
+		E2957EC526943FFC006EF34F /* RestoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreController.swift; sourceTree = "<group>"; };
+		E2957EC726944336006EF34F /* ExtractFileToRestoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractFileToRestoreViewController.swift; sourceTree = "<group>"; };
+		E2957EC92695955C006EF34F /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9C6F441D268A2E1800CB1F9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27CA754003F6041C7E944ADC /* Pods_tedasign.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C6F4436268A2E1D00CB1F9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4677CF2C03462A7691374B5 /* Pods_tedasignTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C6F4441268A2E1D00CB1F9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0396406BE828241996F3374 /* Pods_tedasign_tedasignUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		631981354020A6BADA8A09E6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7DD9B7D4A39DFAF66DFB16F2 /* Pods-tedasign.debug.xcconfig */,
+				89E6F9F61C12B0DF7ACCE877 /* Pods-tedasign.release.xcconfig */,
+				31B04F8BABA67384798DF7A9 /* Pods-tedasign-tedasignUITests.debug.xcconfig */,
+				27B0D88DE3B30151F069391A /* Pods-tedasign-tedasignUITests.release.xcconfig */,
+				58B5E6129E745D868CBF5223 /* Pods-tedasignTests.debug.xcconfig */,
+				B56DDEC6FCFCCFE78C91F110 /* Pods-tedasignTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7DDDE4E7D4376C893C6CC1D1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B4DCE19F54274455CBFB8CDC /* Pods_tedasign.framework */,
+				BAD384D8E1CEEC220A8E6D67 /* Pods_tedasign_tedasignUITests.framework */,
+				7EE18D65CFA35469BC07874B /* Pods_tedasignTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		92E617D52698A29100444A02 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				92E617D62698A2B800444A02 /* PopUpWithImageView.xib */,
+				92E617D82698A2C500444A02 /* PopUpWithImageView.swift */,
+				92E617DA2698A92E00444A02 /* PopUpTwoButton.xib */,
+				92E617DC2698A9B700444A02 /* PopUpTwoButton.swift */,
+				92E617E02698AF3F00444A02 /* PopUpFinishSign.xib */,
+				92E617E22698AF4D00444A02 /* PopUpFinishSign.swift */,
+			);
+			name = CustomView;
+			sourceTree = "<group>";
+		};
+		92F69CDB2698788F006AB1A1 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				92F69CDC2698789D006AB1A1 /* UIViewExtension.swift */,
+				92F69CDE26987DB7006AB1A1 /* UIColorExtension.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		9C09B168268EB08600080C12 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				9C6F4427268A2E1800CB1F9E /* ViewController.swift */,
+				9C6F4456268DD55900CB1F9E /* MainController.swift */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		9C106037268EEB01003AC183 /* classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = classes;
+			sourceTree = "<group>";
+		};
+		9C10605A26918CE3003AC183 /* utility */ = {
+			isa = PBXGroup;
+			children = (
+				9C10605026918CCB003AC183 /* ATGoogleDrive.swift */,
+				9C10605126918CCB003AC183 /* CryptLib.h */,
+				9C10604F26918CCB003AC183 /* CryptLib.m */,
+				9C10605226918CCB003AC183 /* DocumentPicker.swift */,
+				9C10605326918CCB003AC183 /* PKCS12.swift */,
+				9C10605426918CCB003AC183 /* Utility.swift */,
+				E2957EC92695955C006EF34F /* ProgressHUD.swift */,
+			);
+			name = utility;
+			sourceTree = "<group>";
+		};
+		9C10606126918E62003AC183 /* import */ = {
+			isa = PBXGroup;
+			children = (
+				9C10605D26918E5B003AC183 /* BackupViewController.swift */,
+				9C10605E26918E5B003AC183 /* ImportKeyViewController.swift */,
+			);
+			name = import;
+			sourceTree = "<group>";
+		};
+		9C6F4417268A2E1800CB1F9E = {
+			isa = PBXGroup;
+			children = (
+				9C6F4422268A2E1800CB1F9E /* tedasign */,
+				9C6F443C268A2E1D00CB1F9E /* tedasignTests */,
+				9C6F4447268A2E1D00CB1F9E /* tedasignUITests */,
+				9C6F4421268A2E1800CB1F9E /* Products */,
+				631981354020A6BADA8A09E6 /* Pods */,
+				7DDDE4E7D4376C893C6CC1D1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9C6F4421268A2E1800CB1F9E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9C6F4420268A2E1800CB1F9E /* tedasign.app */,
+				9C6F4439268A2E1D00CB1F9E /* tedasignTests.xctest */,
+				9C6F4444268A2E1D00CB1F9E /* tedasignUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9C6F4422268A2E1800CB1F9E /* tedasign */ = {
+			isa = PBXGroup;
+			children = (
+				9C106063269DFE64003AC183 /* tedasign.entitlements */,
+				92E617D52698A29100444A02 /* CustomView */,
+				92F69CDB2698788F006AB1A1 /* Extension */,
+				E2957EC426943FE0006EF34F /* restore */,
+				E2957EBF2692FAE4006EF34F /* sign */,
+				9C10606126918E62003AC183 /* import */,
+				9C10605A26918CE3003AC183 /* utility */,
+				9C106037268EEB01003AC183 /* classes */,
+				9C09B168268EB08600080C12 /* controller */,
+				9C6F4423268A2E1800CB1F9E /* AppDelegate.swift */,
+				9C6F4425268A2E1800CB1F9E /* SceneDelegate.swift */,
+				9C6F4429268A2E1800CB1F9E /* Main.storyboard */,
+				9C6F4431268A2E1C00CB1F9E /* LaunchScreen.storyboard */,
+				9C6F4434268A2E1C00CB1F9E /* Info.plist */,
+				9C6F442C268A2E1800CB1F9E /* tedasign.xcdatamodeld */,
+				92E617DE2698AA6900444A02 /* Assets.xcassets */,
+				9C10604E26918CCA003AC183 /* tedasign-Bridging-Header.h */,
+			);
+			path = tedasign;
+			sourceTree = "<group>";
+		};
+		9C6F443C268A2E1D00CB1F9E /* tedasignTests */ = {
+			isa = PBXGroup;
+			children = (
+				9C6F443D268A2E1D00CB1F9E /* tedasignTests.swift */,
+				9C6F443F268A2E1D00CB1F9E /* Info.plist */,
+			);
+			path = tedasignTests;
+			sourceTree = "<group>";
+		};
+		9C6F4447268A2E1D00CB1F9E /* tedasignUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9C6F4448268A2E1D00CB1F9E /* tedasignUITests.swift */,
+				9C6F444A268A2E1D00CB1F9E /* Info.plist */,
+			);
+			path = tedasignUITests;
+			sourceTree = "<group>";
+		};
+		E2957EBF2692FAE4006EF34F /* sign */ = {
+			isa = PBXGroup;
+			children = (
+				E2957EC02692FE5D006EF34F /* QRScannerViewController.swift */,
+				E2957EC22692FE6D006EF34F /* ListKeyViewController.swift */,
+			);
+			name = sign;
+			sourceTree = "<group>";
+		};
+		E2957EC426943FE0006EF34F /* restore */ = {
+			isa = PBXGroup;
+			children = (
+				E2957EC526943FFC006EF34F /* RestoreController.swift */,
+				E2957EC726944336006EF34F /* ExtractFileToRestoreViewController.swift */,
+			);
+			name = restore;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9C6F441F268A2E1800CB1F9E /* tedasign */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C6F444D268A2E1D00CB1F9E /* Build configuration list for PBXNativeTarget "tedasign" */;
+			buildPhases = (
+				CCD0A6441712B413DD0CB5C2 /* [CP] Check Pods Manifest.lock */,
+				9C6F441C268A2E1800CB1F9E /* Sources */,
+				9C6F441D268A2E1800CB1F9E /* Frameworks */,
+				9C6F441E268A2E1800CB1F9E /* Resources */,
+				6B840975BF242F32BBB6DF63 /* [CP] Embed Pods Frameworks */,
+				4AC4B9034DA194589850F59F /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = tedasign;
+			productName = tedasign;
+			productReference = 9C6F4420268A2E1800CB1F9E /* tedasign.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9C6F4438268A2E1D00CB1F9E /* tedasignTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C6F4450268A2E1D00CB1F9E /* Build configuration list for PBXNativeTarget "tedasignTests" */;
+			buildPhases = (
+				14E715C94CFBB5FC0A74E102 /* [CP] Check Pods Manifest.lock */,
+				9C6F4435268A2E1D00CB1F9E /* Sources */,
+				9C6F4436268A2E1D00CB1F9E /* Frameworks */,
+				9C6F4437268A2E1D00CB1F9E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9C6F443B268A2E1D00CB1F9E /* PBXTargetDependency */,
+			);
+			name = tedasignTests;
+			productName = tedasignTests;
+			productReference = 9C6F4439268A2E1D00CB1F9E /* tedasignTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9C6F4443268A2E1D00CB1F9E /* tedasignUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C6F4453268A2E1D00CB1F9E /* Build configuration list for PBXNativeTarget "tedasignUITests" */;
+			buildPhases = (
+				093D65AE3035F78624D53F8A /* [CP] Check Pods Manifest.lock */,
+				9C6F4440268A2E1D00CB1F9E /* Sources */,
+				9C6F4441268A2E1D00CB1F9E /* Frameworks */,
+				9C6F4442268A2E1D00CB1F9E /* Resources */,
+				8B22F00FD3BF455E58FFD9DE /* [CP] Embed Pods Frameworks */,
+				7BDCBF5B0E914DEC8007914A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9C6F4446268A2E1D00CB1F9E /* PBXTargetDependency */,
+			);
+			name = tedasignUITests;
+			productName = tedasignUITests;
+			productReference = 9C6F4444268A2E1D00CB1F9E /* tedasignUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9C6F4418268A2E1800CB1F9E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					9C6F441F268A2E1800CB1F9E = {
+						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
+					};
+					9C6F4438268A2E1D00CB1F9E = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 9C6F441F268A2E1800CB1F9E;
+					};
+					9C6F4443268A2E1D00CB1F9E = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 9C6F441F268A2E1800CB1F9E;
+					};
+				};
+			};
+			buildConfigurationList = 9C6F441B268A2E1800CB1F9E /* Build configuration list for PBXProject "tedasign" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9C6F4417268A2E1800CB1F9E;
+			productRefGroup = 9C6F4421268A2E1800CB1F9E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9C6F441F268A2E1800CB1F9E /* tedasign */,
+				9C6F4438268A2E1D00CB1F9E /* tedasignTests */,
+				9C6F4443268A2E1D00CB1F9E /* tedasignUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9C6F441E268A2E1800CB1F9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92E617DB2698A92E00444A02 /* PopUpTwoButton.xib in Resources */,
+				9C6F4433268A2E1C00CB1F9E /* LaunchScreen.storyboard in Resources */,
+				92E617D72698A2B800444A02 /* PopUpWithImageView.xib in Resources */,
+				9C6F442B268A2E1800CB1F9E /* Main.storyboard in Resources */,
+				92E617E12698AF4000444A02 /* PopUpFinishSign.xib in Resources */,
+				92E617DF2698AA6900444A02 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C6F4437268A2E1D00CB1F9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C6F4442268A2E1D00CB1F9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		093D65AE3035F78624D53F8A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-tedasign-tedasignUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		14E715C94CFBB5FC0A74E102 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-tedasignTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4AC4B9034DA194589850F59F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tedasign/Pods-tedasign-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tedasign/Pods-tedasign-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tedasign/Pods-tedasign-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6B840975BF242F32BBB6DF63 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tedasign/Pods-tedasign-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tedasign/Pods-tedasign-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tedasign/Pods-tedasign-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7BDCBF5B0E914DEC8007914A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tedasign-tedasignUITests/Pods-tedasign-tedasignUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tedasign-tedasignUITests/Pods-tedasign-tedasignUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tedasign-tedasignUITests/Pods-tedasign-tedasignUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B22F00FD3BF455E58FFD9DE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tedasign-tedasignUITests/Pods-tedasign-tedasignUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tedasign-tedasignUITests/Pods-tedasign-tedasignUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tedasign-tedasignUITests/Pods-tedasign-tedasignUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CCD0A6441712B413DD0CB5C2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-tedasign-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9C6F441C268A2E1800CB1F9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92E617DD2698A9B700444A02 /* PopUpTwoButton.swift in Sources */,
+				9C10605926918CCB003AC183 /* Utility.swift in Sources */,
+				92E617E32698AF4D00444A02 /* PopUpFinishSign.swift in Sources */,
+				E2957EC12692FE5D006EF34F /* QRScannerViewController.swift in Sources */,
+				9C10605526918CCB003AC183 /* CryptLib.m in Sources */,
+				9C6F442E268A2E1800CB1F9E /* tedasign.xcdatamodeld in Sources */,
+				92F69CDF26987DB7006AB1A1 /* UIColorExtension.swift in Sources */,
+				E2957EC826944336006EF34F /* ExtractFileToRestoreViewController.swift in Sources */,
+				E2957EC626943FFC006EF34F /* RestoreController.swift in Sources */,
+				92F69CDD2698789D006AB1A1 /* UIViewExtension.swift in Sources */,
+				E2957ECA2695955D006EF34F /* ProgressHUD.swift in Sources */,
+				92E617D92698A2C500444A02 /* PopUpWithImageView.swift in Sources */,
+				E2957EC32692FE6D006EF34F /* ListKeyViewController.swift in Sources */,
+				9C10606026918E5B003AC183 /* ImportKeyViewController.swift in Sources */,
+				9C6F4428268A2E1800CB1F9E /* ViewController.swift in Sources */,
+				9C10605626918CCB003AC183 /* ATGoogleDrive.swift in Sources */,
+				9C10605726918CCB003AC183 /* DocumentPicker.swift in Sources */,
+				9C6F4424268A2E1800CB1F9E /* AppDelegate.swift in Sources */,
+				9C6F4426268A2E1800CB1F9E /* SceneDelegate.swift in Sources */,
+				9C10605826918CCB003AC183 /* PKCS12.swift in Sources */,
+				9C6F4457268DD55900CB1F9E /* MainController.swift in Sources */,
+				9C10605F26918E5B003AC183 /* BackupViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C6F4435268A2E1D00CB1F9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C6F443E268A2E1D00CB1F9E /* tedasignTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C6F4440268A2E1D00CB1F9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C6F4449268A2E1D00CB1F9E /* tedasignUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9C6F443B268A2E1D00CB1F9E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C6F441F268A2E1800CB1F9E /* tedasign */;
+			targetProxy = 9C6F443A268A2E1D00CB1F9E /* PBXContainerItemProxy */;
+		};
+		9C6F4446268A2E1D00CB1F9E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C6F441F268A2E1800CB1F9E /* tedasign */;
+			targetProxy = 9C6F4445268A2E1D00CB1F9E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9C6F4429268A2E1800CB1F9E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C6F442A268A2E1800CB1F9E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9C6F4431268A2E1C00CB1F9E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C6F4432268A2E1C00CB1F9E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9C6F444B268A2E1D00CB1F9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9C6F444C268A2E1D00CB1F9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9C6F444E268A2E1D00CB1F9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DD9B7D4A39DFAF66DFB16F2 /* Pods-tedasign.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = tedasign/tedasign.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JX3TU57UD2;
+				INFOPLIST_FILE = tedasign/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.etda.tedasign;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "tedasign/tedasign-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9C6F444F268A2E1D00CB1F9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89E6F9F61C12B0DF7ACCE877 /* Pods-tedasign.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = tedasign/tedasign.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JX3TU57UD2;
+				INFOPLIST_FILE = tedasign/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.etda.tedasign;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "tedasign/tedasign-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9C6F4451268A2E1D00CB1F9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58B5E6129E745D868CBF5223 /* Pods-tedasignTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RG2VUUK6T2;
+				INFOPLIST_FILE = tedasignTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.etda.tedasignTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tedasign.app/tedasign";
+			};
+			name = Debug;
+		};
+		9C6F4452268A2E1D00CB1F9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B56DDEC6FCFCCFE78C91F110 /* Pods-tedasignTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RG2VUUK6T2;
+				INFOPLIST_FILE = tedasignTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.etda.tedasignTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tedasign.app/tedasign";
+			};
+			name = Release;
+		};
+		9C6F4454268A2E1D00CB1F9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31B04F8BABA67384798DF7A9 /* Pods-tedasign-tedasignUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RG2VUUK6T2;
+				INFOPLIST_FILE = tedasignUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.etda.tedasignUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = tedasign;
+			};
+			name = Debug;
+		};
+		9C6F4455268A2E1D00CB1F9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27B0D88DE3B30151F069391A /* Pods-tedasign-tedasignUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RG2VUUK6T2;
+				INFOPLIST_FILE = tedasignUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.etda.tedasignUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = tedasign;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9C6F441B268A2E1800CB1F9E /* Build configuration list for PBXProject "tedasign" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C6F444B268A2E1D00CB1F9E /* Debug */,
+				9C6F444C268A2E1D00CB1F9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C6F444D268A2E1D00CB1F9E /* Build configuration list for PBXNativeTarget "tedasign" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C6F444E268A2E1D00CB1F9E /* Debug */,
+				9C6F444F268A2E1D00CB1F9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C6F4450268A2E1D00CB1F9E /* Build configuration list for PBXNativeTarget "tedasignTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C6F4451268A2E1D00CB1F9E /* Debug */,
+				9C6F4452268A2E1D00CB1F9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C6F4453268A2E1D00CB1F9E /* Build configuration list for PBXNativeTarget "tedasignUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C6F4454268A2E1D00CB1F9E /* Debug */,
+				9C6F4455268A2E1D00CB1F9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9C6F442C268A2E1800CB1F9E /* tedasign.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9C6F442D268A2E1800CB1F9E /* tedasign.xcdatamodel */,
+			);
+			currentVersion = 9C6F442D268A2E1800CB1F9E /* tedasign.xcdatamodel */;
+			path = tedasign.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 9C6F4418268A2E1800CB1F9E /* Project object */;
+}
