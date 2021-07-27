@@ -107,18 +107,62 @@ class ImportKeyViewController: UIViewController,UITextFieldDelegate {
     
     func ConnectGoolgeAccount() {
         //Google
-        GIDSignIn.sharedInstance()?.signOut()
-        //
-        GIDSignIn.sharedInstance().delegate = self
-        GIDSignIn.sharedInstance().uiDelegate = self
-        //        GIDSignIn.sharedInstance().scopes = [kGTLRAuthScopeDriveFile]
-        GIDSignIn.sharedInstance()?.scopes = [kGTLRAuthScopeDriveFile, kGTLRAuthScopeDrive, kGTLRAuthScopeDriveAppdata, kGTLRAuthScopeDriveMetadata, kGTLRAuthScopeDriveScripts]
-        GIDSignIn.sharedInstance().signInSilently()
+//        GIDSignIn.sharedInstance()?.signOut()
+//        //
+//        GIDSignIn.sharedInstance().delegate = self
+//        GIDSignIn.sharedInstance().uiDelegate = self
+//        //        GIDSignIn.sharedInstance().scopes = [kGTLRAuthScopeDriveFile]
+//        GIDSignIn.sharedInstance()?.scopes = [kGTLRAuthScopeDriveFile, kGTLRAuthScopeDrive, kGTLRAuthScopeDriveAppdata, kGTLRAuthScopeDriveMetadata, kGTLRAuthScopeDriveScripts]
+//        GIDSignIn.sharedInstance().signInSilently()
+//        //
+//        drive = ATGoogleDrive(service)
+//
+//        //Sign to google account
+//        GIDSignIn.sharedInstance()?.signIn()
+        
+//        GIDSignIn.sharedInstance.signOut()
+//        let additionalScopes = [kGTLRAuthScopeDriveFile, kGTLRAuthScopeDrive, kGTLRAuthScopeDriveAppdata, kGTLRAuthScopeDriveMetadata, kGTLRAuthScopeDriveScripts]
+//        GIDSignIn.sharedInstance.addScopes(additionalScopes, presenting: self) { user, error in
+//            guard error == nil else { return }
+//            guard let _ = user else { return }
+//        }
         //
         drive = ATGoogleDrive(service)
         
         //Sign to google account
-        GIDSignIn.sharedInstance()?.signIn()
+        //GIDSignIn.sharedInstance()?.signIn()
+        GIDSignIn.sharedInstance.signIn(with: AppDelegate.signInConfig, presenting: self) { user, error in
+            if (error == nil) {
+                //self.service.authorizer = user?.authentication.fetcherAuthorizer()
+                print("Login Successed!")
+                
+                let additionalScopes = [kGTLRAuthScopeDriveFile, kGTLRAuthScopeDrive, kGTLRAuthScopeDriveAppdata, kGTLRAuthScopeDriveMetadata, kGTLRAuthScopeDriveScripts]
+                GIDSignIn.sharedInstance.addScopes(additionalScopes, presenting: self) { user, error in
+                    guard error == nil else { return }
+                    guard let user = user else { return }
+
+                    self.service.authorizer = user.authentication.fetcherAuthorizer()
+                    
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil);
+                    let vc = storyboard.instantiateViewController(withIdentifier: "BackupViewController") as! BackupViewController;
+                    vc.dataImport = self.dataImport
+                    vc.name = self.nameKey
+                    vc.drive = self.drive
+                    DispatchQueue.main.async {
+                        //               self.present(vc, animated: true, completion: nil)
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    }
+                }
+            } else {
+                print("Login Failed")
+                self.service.authorizer = nil
+                print(user)
+                print(error?.localizedDescription)
+                if(error?.localizedDescription == "The user canceled the sign-in flow."){
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }
+          }
     }
     
     @IBAction func touchShowOrHidePasswordButton(_ sender: Any) {
@@ -492,72 +536,72 @@ class ImportKeyViewController: UIViewController,UITextFieldDelegate {
     } // .End showConfirmBackupOrNot
 }
 // MARK: - GIDSignInDelegate
-extension ImportKeyViewController: GIDSignInDelegate {
-    
-//    func signIn(signIn: GIDSignIn!, didSignInForUser user: GIDGoogleUser!, withError error: NSError!) {
+//extension ImportKeyViewController: GIDSignInDelegate {
 //
-//    }
-//    func signIn(signIn: GIDSignIn!, didDisconnectWithUser user: GIDGoogleUser!, withError error: NSError!) {
+////    func signIn(signIn: GIDSignIn!, didSignInForUser user: GIDGoogleUser!, withError error: NSError!) {
+////
+////    }
+////    func signIn(signIn: GIDSignIn!, didDisconnectWithUser user: GIDGoogleUser!, withError error: NSError!) {
+////
+////    }
 //
-//    }
-    
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if (error == nil) {
-            print("Login True")
-            service.authorizer = user.authentication.fetcherAuthorizer()
-            print("Login Successed!")
-            let storyboard = UIStoryboard(name: "Main", bundle: nil);
-            let vc = storyboard.instantiateViewController(withIdentifier: "BackupViewController") as! BackupViewController;
-            vc.dataImport = self.dataImport
-            vc.name = self.nameKey
-            vc.drive = self.drive
-            DispatchQueue.main.async {
-                //               self.present(vc, animated: true, completion: nil)
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
-        } else {
-            print("Login Failed")
-            service.authorizer = nil
-            print(user)
-            print(error.localizedDescription)
-            if(error.localizedDescription == "The user canceled the sign-in flow."){
-                self.navigationController?.popViewController(animated: true)
-            }
-             
-//            if let error = error {
-//                //            showAlert (title: "Authentication Error", message: error.localizedDescription)
-//                service.authorizer = nil
-//                print("Login Failed")
-//    //            self.navigationController?.popToRootViewController(animated: true)
-//
-//            } else {
-//                service.authorizer = user.authentication.fetcherAuthorizer()
-//                print("Login Successed!")
-//                let storyboard = UIStoryboard(name: "Main", bundle: nil);
-//                let vc = storyboard.instantiateViewController(withIdentifier: "BackupViewController") as! BackupViewController;
-//                vc.dataImport = self.dataImport
-//                vc.name = self.nameKey
-//                vc.drive = self.drive
-//                DispatchQueue.main.async {
-//                    //               self.present(vc, animated: true, completion: nil)
-//                    self.navigationController?.pushViewController(vc, animated: true)
-//                }
+//    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+//        if (error == nil) {
+//            print("Login True")
+//            service.authorizer = user.authentication.fetcherAuthorizer()
+//            print("Login Successed!")
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil);
+//            let vc = storyboard.instantiateViewController(withIdentifier: "BackupViewController") as! BackupViewController;
+//            vc.dataImport = self.dataImport
+//            vc.name = self.nameKey
+//            vc.drive = self.drive
+//            DispatchQueue.main.async {
+//                //               self.present(vc, animated: true, completion: nil)
+//                self.navigationController?.pushViewController(vc, animated: true)
 //            }
-        }
-        
-    }
-    
-    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-        print("Did disconnect to user")
-//        self.navigationController?.popToRootViewController(animated: true)
-    }
-}
-
-// MARK: - GIDSignInUIDelegate
-extension ImportKeyViewController: GIDSignInUIDelegate {}
-
-extension UINavigationBar {
-    open override func sizeThatFits(_ size: CGSize) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.width, height: 51)
-    }
-}
+//        } else {
+//            print("Login Failed")
+//            service.authorizer = nil
+//            print(user)
+//            print(error.localizedDescription)
+//            if(error.localizedDescription == "The user canceled the sign-in flow."){
+//                self.navigationController?.popViewController(animated: true)
+//            }
+//
+////            if let error = error {
+////                //            showAlert (title: "Authentication Error", message: error.localizedDescription)
+////                service.authorizer = nil
+////                print("Login Failed")
+////    //            self.navigationController?.popToRootViewController(animated: true)
+////
+////            } else {
+////                service.authorizer = user.authentication.fetcherAuthorizer()
+////                print("Login Successed!")
+////                let storyboard = UIStoryboard(name: "Main", bundle: nil);
+////                let vc = storyboard.instantiateViewController(withIdentifier: "BackupViewController") as! BackupViewController;
+////                vc.dataImport = self.dataImport
+////                vc.name = self.nameKey
+////                vc.drive = self.drive
+////                DispatchQueue.main.async {
+////                    //               self.present(vc, animated: true, completion: nil)
+////                    self.navigationController?.pushViewController(vc, animated: true)
+////                }
+////            }
+//        }
+//
+//    }
+//
+//    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+//        print("Did disconnect to user")
+////        self.navigationController?.popToRootViewController(animated: true)
+//    }
+//}
+//
+//// MARK: - GIDSignInUIDelegate
+//extension ImportKeyViewController: GIDSignInUIDelegate {}
+//
+//extension UINavigationBar {
+//    open override func sizeThatFits(_ size: CGSize) -> CGSize {
+//        return CGSize(width: UIScreen.main.bounds.width, height: 51)
+//    }
+//}

@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     static var isFaceFirst = true
 
     static var navigationBarSize = 80
-    
+    static var signInConfig = GIDConfiguration.init(clientID: "38584293763-pv320l884egmt4984hjcphku3bai8imk.apps.googleusercontent.com")
     var window: UIWindow?
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
@@ -54,13 +54,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
            userdefaults.set(false, forKey: "isAuth")
         }
-        GIDSignIn.sharedInstance().clientID = "38584293763-pv320l884egmt4984hjcphku3bai8imk.apps.googleusercontent.com"
+        //GIDSignIn.sharedInstance().clientID = "38584293763-pv320l884egmt4984hjcphku3bai8imk.apps.googleusercontent.com"
         return true
     }
 
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
         print("ABC")
-        return GIDSignIn.sharedInstance().handle(url, sourceApplication: sourceApplication, annotation: annotation)
+        var handled: Bool
+          handled = GIDSignIn.sharedInstance.handle(url)
+          if handled {
+            return true
+          }
+          return false
+        //return GIDSignIn.sharedInstance.handle(url, sourceApplication: sourceApplication, annotation: annotation)
     }
     
     private func printDocumentsDirectory() {

@@ -316,7 +316,6 @@
 				9C6F441D268A2E1800CB1F9E /* Frameworks */,
 				9C6F441E268A2E1800CB1F9E /* Resources */,
 				6B840975BF242F32BBB6DF63 /* [CP] Embed Pods Frameworks */,
-				4AC4B9034DA194589850F59F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -355,7 +354,6 @@
 				9C6F4441268A2E1D00CB1F9E /* Frameworks */,
 				9C6F4442268A2E1D00CB1F9E /* Resources */,
 				8B22F00FD3BF455E58FFD9DE /* [CP] Embed Pods Frameworks */,
-				7BDCBF5B0E914DEC8007914A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -485,23 +483,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4AC4B9034DA194589850F59F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-tedasign/Pods-tedasign-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-tedasign/Pods-tedasign-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tedasign/Pods-tedasign-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		6B840975BF242F32BBB6DF63 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -517,23 +498,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tedasign/Pods-tedasign-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7BDCBF5B0E914DEC8007914A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-tedasign-tedasignUITests/Pods-tedasign-tedasignUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-tedasign-tedasignUITests/Pods-tedasign-tedasignUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tedasign-tedasignUITests/Pods-tedasign-tedasignUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8B22F00FD3BF455E58FFD9DE /* [CP] Embed Pods Frameworks */ = {
@@ -783,7 +747,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = tedasign/tedasign.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JX3TU57UD2;
+				DEVELOPMENT_TEAM = RG2VUUK6T2;
 				INFOPLIST_FILE = tedasign/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -807,7 +771,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = tedasign/tedasign.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JX3TU57UD2;
+				DEVELOPMENT_TEAM = RG2VUUK6T2;
 				INFOPLIST_FILE = tedasign/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -828,7 +792,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RG2VUUK6T2;
+				DEVELOPMENT_TEAM = 2W2HMM5VWX;
 				INFOPLIST_FILE = tedasignTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -851,7 +815,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RG2VUUK6T2;
+				DEVELOPMENT_TEAM = 2W2HMM5VWX;
 				INFOPLIST_FILE = tedasignTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -873,7 +837,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RG2VUUK6T2;
+				DEVELOPMENT_TEAM = 2W2HMM5VWX;
 				INFOPLIST_FILE = tedasignUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -894,7 +858,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RG2VUUK6T2;
+				DEVELOPMENT_TEAM = 2W2HMM5VWX;
 				INFOPLIST_FILE = tedasignUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -5,7 +5,7 @@ target 'tedasign' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  pod 'GoogleSignIn', '~> 4.4.0'
+  pod 'GoogleSignIn'
   pod 'GoogleAPIClientForREST/Drive', '~> 1.3.7'
   pod 'KeychainAccess'
   pod 'Alamofire', '~> 5.4'

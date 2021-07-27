@@ -35,10 +35,14 @@ class RestoreViewController: UIViewController, UITableViewDataSource, UITableVie
       
           self.view.addSubview(progressHUD)
         
-        GIDSignIn.sharedInstance()?.signOut()
-        ConnectGoolgeAccount()
+        GIDSignIn.sharedInstance.signOut()
+        //ConnectGoolgeAccount()
         self.navigationItem.backButtonDisplayMode = .minimal
 
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        ConnectGoolgeAccount()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -96,17 +100,46 @@ class RestoreViewController: UIViewController, UITableViewDataSource, UITableVie
         //Google
 //        GIDSignIn.sharedInstance()?.signOut()
         //
-        GIDSignIn.sharedInstance().delegate = self
-        GIDSignIn.sharedInstance().uiDelegate = self
+        //GIDSignIn.sharedInstance.delegate = self
+        //GIDSignIn.sharedInstance().uiDelegate = self
 //        GIDSignIn.sharedInstance().scopes = [kGTLRAuthScopeDriveFile]
-        GIDSignIn.sharedInstance()?.scopes = [kGTLRAuthScopeDriveFile, kGTLRAuthScopeDrive, kGTLRAuthScopeDriveAppdata, kGTLRAuthScopeDriveMetadata, kGTLRAuthScopeDriveScripts]
+        //GIDSignIn.sharedInstance.scopes = [kGTLRAuthScopeDriveFile, kGTLRAuthScopeDrive, kGTLRAuthScopeDriveAppdata, kGTLRAuthScopeDriveMetadata, kGTLRAuthScopeDriveScripts]
 //        GIDSignIn.sharedInstance().signInSilently()
         
+//        let additionalScopes = [kGTLRAuthScopeDriveFile, kGTLRAuthScopeDrive, kGTLRAuthScopeDriveAppdata, kGTLRAuthScopeDriveMetadata, kGTLRAuthScopeDriveScripts]
+//        GIDSignIn.sharedInstance.addScopes(additionalScopes, presenting: self) { user, error in
+//            print("addScopes user : \(user)")
+//            print("addScopes error :\(error)")
+//            guard error == nil else { return }
+//            guard let _ = user else { return }
+//        }
         //
         drive = ATGoogleDrive(service)
         
         //Sign to google account
-        GIDSignIn.sharedInstance()?.signIn()
+        //GIDSignIn.sharedInstance()?.signIn()
+        GIDSignIn.sharedInstance.signIn(with: AppDelegate.signInConfig, presenting: self) { user, error in
+            if let _ = error {
+                self.service.authorizer = nil
+                print("Login Failed")
+                print(error?.localizedDescription)
+                self.navigationController?.popViewController(animated: true)
+            } else {
+                //self.service.authorizer = user?.authentication.fetcherAuthorizer()
+                print("Login Successed!")
+                self.tvEmail.text = user?.profile?.email
+                
+                let additionalScopes = [kGTLRAuthScopeDriveFile, kGTLRAuthScopeDrive, kGTLRAuthScopeDriveAppdata, kGTLRAuthScopeDriveMetadata, kGTLRAuthScopeDriveScripts]
+                GIDSignIn.sharedInstance.addScopes(additionalScopes, presenting: self) { user, error in
+                    guard error == nil else { return }
+                    guard let user = user else { return }
+
+                    self.service.authorizer = user.authentication.fetcherAuthorizer()
+                    self.getAllfolders()
+                }
+                
+            }
+          }
     }
     
     func getAllfolders() {
@@ -119,18 +152,23 @@ class RestoreViewController: UIViewController, UITableViewDataSource, UITableVie
        service.executeQuery(query, completionHandler: {(ticket, files, error) in
            if let filesList : GTLRDrive_FileList = files as? GTLRDrive_FileList {
                if let filesShow : [GTLRDrive_File] = filesList.files {
-//                   print("files \(filesShow)")
+                   print("files \(filesShow)")
                    for ArrayList in filesShow {
                        let name = ArrayList.name ?? ""
                        let id = ArrayList.identifier ?? ""
 //                       print("hello\(name)", id)
+                    print("file : \(name), id : \(id)")
                     if(name == "TEDA Sign"){
                         self.getMyFolders(id: id)
                         break
                     }
 //                    self.myArray.adding(name)
                    }
+               } else {
+                    self.progressHUD.hide()
                }
+           } else {
+                self.progressHUD.hide()
            }
 //        self.myTableView.beginUpdates()
 //        self.myTableView.insertRows(at: [IndexPath.init(row: self.myArray.count-1, section: 0)], with: .automatic)
@@ -244,30 +282,30 @@ class RestoreViewController: UIViewController, UITableViewDataSource, UITableVie
     }
 }
 
-// MARK: - GIDSignInDelegate
-extension RestoreViewController: GIDSignInDelegate {
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if let _ = error {
-//            showAlert (title: "Authentication Error", message: error.localizedDescription)
-            service.authorizer = nil
-            print("Login Failed")
-            self.navigationController?.popViewController(animated: true)
-        } else {
-            service.authorizer = user.authentication.fetcherAuthorizer()
-            print("Login Successed!")
-            tvEmail.text = user.profile.email
-            DispatchQueue.main.async {
-//                self.dismiss(animated: true, completion: nil)
-                self.getAllfolders()
-            }
-            
-        }
-    }
-    
-    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-            print("Did disconnect to user")
-      
-    }
-}
-// MARK: - GIDSignInUIDelegate
-extension RestoreViewController: GIDSignInUIDelegate {}
+//// MARK: - GIDSignInDelegate
+//extension RestoreViewController: GIDSignInDelegate {
+//    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+//        if let _ = error {
+////            showAlert (title: "Authentication Error", message: error.localizedDescription)
+//            service.authorizer = nil
+//            print("Login Failed")
+//            self.navigationController?.popViewController(animated: true)
+//        } else {
+//            service.authorizer = user.authentication.fetcherAuthorizer()
+//            print("Login Successed!")
+//            tvEmail.text = user.profile?.email
+//            DispatchQueue.main.async {
+////                self.dismiss(animated: true, completion: nil)
+//                self.getAllfolders()
+//            }
+//
+//        }
+//    }
+//
+//    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+//            print("Did disconnect to user")
+//
+//    }
+//}
+//// MARK: - GIDSignInUIDelegate
+//extension RestoreViewController: GIDSignInUIDelegate {}
