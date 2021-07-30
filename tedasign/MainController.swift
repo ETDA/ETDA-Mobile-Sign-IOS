@@ -43,6 +43,7 @@ class MainController: UIViewController,UITableViewDataSource ,UITableViewDelegat
         self.tableView.delegate = self
            self.tableView.dataSource = self
         self.navigationItem.backButtonDisplayMode = .minimal
+        print("MainViewLoad")
 
         //loadListKey()
         
@@ -52,6 +53,7 @@ class MainController: UIViewController,UITableViewDataSource ,UITableViewDelegat
     
     
     override func viewWillAppear(_ animated: Bool) {
+        print("MainViewWillAppear")
         super.viewWillAppear(animated)
         registerToBackFromBackground()
         loadListKey()

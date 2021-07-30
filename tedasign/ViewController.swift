@@ -121,14 +121,15 @@ class ViewController: UIViewController {
 
     }
     @objc func viewDidBecomeActive(){
-        DispatchQueue.main.async {
-            self.supportedBiometricType()
-        }
+        //DispatchQueue.main.async {
+        //    self.supportedBiometricType()
+        //}
         print("viewDidBecomeActive ")
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        print("ViewController viewWillAppear")
         super.viewWillAppear(animated)
         registerToBackFromBackground()
         navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -155,6 +156,7 @@ class ViewController: UIViewController {
     public func checkFirst() -> Bool{
         var returnVal = false
         mListKey = SelectAllKey()
+        print("mList item : \(mListKey.count)")
         if(!mListKey.isEmpty){
             returnVal = true
             let storyboard = UIStoryboard(name: "Main", bundle: nil);
