@@ -357,6 +357,28 @@ extension MainController: UIDocumentPickerDelegate {
             self.supportedBiometricType()
         }
         print("viewDidBecomeActive ")
-
+        let qr = AppDelegate.qrcode
+        if qr.count >= 1 {
+            processQR(qr: qr)
+            AppDelegate.qrcode = ""
+        }
+    }
+    
+    func processQR(qr:String) {
+        let strQRValArr =  qr.components(separatedBy: ";")
+        if(strQRValArr.count >= 3){
+        let str_ref_number =  strQRValArr[3]
+        let popUp = PopUpTwoButton(imageName: nil, title: "ข้อมูลเอกสารที่ลงนาม", message: "หมายเลข Reference : "+str_ref_number, acceptButtonString: "CONFIRM", cancelButtonString: "CANCEL") {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil);
+            let vc = storyboard.instantiateViewController(withIdentifier: "ListKeyViewController") as! ListKeyViewController;
+            vc.qrcode = qr
+            DispatchQueue.main.async {
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        } touchCancel: {
+            print("user cancel")
+        }
+            popUp.show()
+        }
     }
 }

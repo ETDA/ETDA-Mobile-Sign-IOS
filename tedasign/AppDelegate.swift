@@ -28,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     static var signInConfig = GIDConfiguration.init(clientID: "38584293763-pv320l884egmt4984hjcphku3bai8imk.apps.googleusercontent.com")
     var window: UIWindow?
     
+    static var qrcode = ""
+    
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
         
       //bookTableViewController.tableView.reloadData()

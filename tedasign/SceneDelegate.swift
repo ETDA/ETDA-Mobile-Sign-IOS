@@ -16,6 +16,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        
+        if connectionOptions.urlContexts.first?.url != nil {
+            let urlinfo = connectionOptions.urlContexts.first?.url
+            if urlinfo?.host != nil && urlinfo?.host! == "qrcode" {
+                let qr = urlinfo?.pathComponents[1].base64Decoded()!
+                AppDelegate.qrcode = qr!
+            }
+        }
+        
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 
@@ -51,5 +60,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
 
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        for context in URLContexts {
+            print("url: \(context.url.absoluteURL)")
+            print("scheme: \(context.url.scheme)")
+            print("host: \(context.url.host)")
+            print("path: \(context.url.path)")
+            print("components: \(context.url.pathComponents)")
+            if context.url.host != nil && context.url.host! == "qrcode" {
+                print("qrcode = \(context.url.pathComponents[1])")
+                let qr = context.url.pathComponents[1].base64Decoded()!
+                AppDelegate.qrcode = qr
+            }
+          }
+    }
 }
 
