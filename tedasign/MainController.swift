@@ -291,7 +291,7 @@ extension MainController: UIDocumentPickerDelegate {
     
     func alertPromptToAllowCameraAccessViaSetting() {
  
-        let popUp = PopUpWithImageView(imageName: "checkmark_circle", title: "We need to access your camera for scanning QR code.", okButtonString: "Go to setting") {
+        let popUp = PopUpWithImageView(imageName: "warning", title: "We need to access your camera for scanning QR code.", okButtonString: "Go to setting") {
             DispatchQueue.main.async {
                 UIApplication.shared.openURL(URL(string: UIApplication.openSettingsURLString)!)
             }
@@ -302,7 +302,7 @@ extension MainController: UIDocumentPickerDelegate {
     
     private func supportedBiometricType ()
     {
-        let popUp = PopUpWithImageView(imageName: "checkmark_circle", title: "Please use biometrics to authentication.", okButtonString: "Go to setting") {
+        let popUp = PopUpWithImageView(imageName: "warning", title: "Please use biometrics to authentication.", okButtonString: "Go to setting") {
                 DispatchQueue.main.async {
                     UIApplication.shared.openURL(URL(string: UIApplication.openSettingsURLString)!)
                 }

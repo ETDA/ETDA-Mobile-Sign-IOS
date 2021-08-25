@@ -94,7 +94,7 @@ class BackupViewController: UIViewController, UITextFieldDelegate {
 //        }))
 //        self.present(alert, animated: true)
 
-        let popUp = PopUpWithImageView(imageName: "checkmark_circle", title: "รหัสผ่านอย่างน้อย 8 ตัว", okButtonString: "OK")
+        let popUp = PopUpWithImageView(imageName: "x_circle", title: "รหัสผ่านอย่างน้อย 8 ตัว", okButtonString: "OK")
         popUp.show()
     }
     
@@ -165,7 +165,7 @@ class BackupViewController: UIViewController, UITextFieldDelegate {
 //            //Alert Message
 //            self.present(alert, animated: true, completion: nil)
             
-            let popUp = PopUpWithImageView(imageName: "checkmark_circle", title: "\(error)", okButtonString: "OK") {
+            let popUp = PopUpWithImageView(imageName: "x_circle", title: "\(error)", okButtonString: "OK") {
                 self.navigationController?.popToRootViewController(animated: true)
             }
             popUp.show()

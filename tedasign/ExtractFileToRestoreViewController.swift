@@ -101,7 +101,7 @@ class ExtractFileToRestoreViewController: UIViewController, UITextFieldDelegate 
 //            let alert = UIAlertController(title: "Warning!", message: "Please input Password", preferredStyle: .alert)
 //            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
 //            self.present(alert, animated: true)
-            let popUp = PopUpWithImageView(imageName: "checkmark_circle", title: "Please input Password", okButtonString: "OK")
+            let popUp = PopUpWithImageView(imageName: "warning", title: "Please input Password", okButtonString: "OK")
             popUp.show()
             return
         }
@@ -169,7 +169,7 @@ class ExtractFileToRestoreViewController: UIViewController, UITextFieldDelegate 
 //            let alert = UIAlertController(title: "Warning!", message: "Wrong password", preferredStyle: .alert)
 //            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
 //            self.present(alert, animated: true)
-            let popUp = PopUpWithImageView(imageName: "checkmark_circle", title: "Wrong password", okButtonString: "OK")
+            let popUp = PopUpWithImageView(imageName: "x_circle", title: "Wrong password", okButtonString: "OK")
             popUp.show()
             return
         }
@@ -178,7 +178,7 @@ class ExtractFileToRestoreViewController: UIViewController, UITextFieldDelegate 
 //            let alert = UIAlertController(title: "Warning!", message: "Wrong password", preferredStyle: .alert)
 //            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
 //            self.present(alert, animated: true)
-            let popUp = PopUpWithImageView(imageName: "checkmark_circle", title: "Wrong password", okButtonString: "OK")
+            let popUp = PopUpWithImageView(imageName: "x_circle", title: "Wrong password", okButtonString: "OK")
             popUp.show()
             return
         }

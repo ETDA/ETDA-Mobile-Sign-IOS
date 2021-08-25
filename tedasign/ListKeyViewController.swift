@@ -396,7 +396,7 @@ class ListKeyViewController: UIViewController, UITableViewDataSource ,UITableVie
 //                        self.present(alert, animated: true, completion: nil)
 //                    }
                     
-                    let popUp = PopUpWithImageView(imageName: "checkmark_circle", title: json["description"] as! String, okButtonString: "OK")
+                    let popUp = PopUpWithImageView(imageName: "warning", title: json["description"] as! String, okButtonString: "OK")
                     popUp.show()
                   
                 }
@@ -506,7 +506,7 @@ class ListKeyViewController: UIViewController, UITableViewDataSource ,UITableVie
 //                    }
                     DispatchQueue.main.async {
                         
-                        let popUp = PopUpWithImageView(imageName: "checkmark_circle", title: json["description"]  as! String, okButtonString: "CLOSE")
+                        let popUp = PopUpWithImageView(imageName: "warning", title: json["description"]  as! String, okButtonString: "CLOSE")
                         popUp.show()
                     }
                   

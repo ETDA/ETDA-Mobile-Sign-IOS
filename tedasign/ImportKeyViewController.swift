@@ -192,7 +192,7 @@ class ImportKeyViewController: UIViewController,UITextFieldDelegate {
 //            txtInsertNameKey.becomeFirstResponder()
 //            self.present(alert, animated: true)
 //
-            let popUp = PopUpWithImageView(imageName: "checkmark_circle", title: "กรุณาใส่ข้อมูลให้ครบ", okButtonString: "CLOSE")
+            let popUp = PopUpWithImageView(imageName: "warning", title: "กรุณาใส่ข้อมูลให้ครบ", okButtonString: "CLOSE")
             popUp.show()
             txtInsertNameKey.becomeFirstResponder()
             return
@@ -202,7 +202,7 @@ class ImportKeyViewController: UIViewController,UITextFieldDelegate {
 //            txtInputPass.becomeFirstResponder()
 //            self.present(alert, animated: true)
             
-            let popUp = PopUpWithImageView(imageName: "checkmark_circle", title: "กรุณาใส่ข้อมูลให้ครบ", okButtonString: "CLOSE")
+            let popUp = PopUpWithImageView(imageName: "warning", title: "กรุณาใส่ข้อมูลให้ครบ", okButtonString: "CLOSE")
             popUp.show()
             txtInsertNameKey.becomeFirstResponder()
             return
@@ -214,7 +214,7 @@ class ImportKeyViewController: UIViewController,UITextFieldDelegate {
 //            let alert = UIAlertController(title: "Warning!", message: "Wrong password or corrupted file", preferredStyle: .alert)
 //            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
 //            self.present(alert, animated: true)
-            let popUp = PopUpWithImageView(imageName: "checkmark_circle", title: "Wrong password or corrupted file", okButtonString: "OK")
+            let popUp = PopUpWithImageView(imageName: "x_circle", title: "Wrong password or corrupted file", okButtonString: "OK")
             popUp.show()
             return
         }

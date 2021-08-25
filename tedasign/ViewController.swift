@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     
     private func supportedBiometricType ()
     {
-        let popUp = PopUpWithImageView(imageName: "checkmark_circle", title: "Please use biometrics to authentication.", okButtonString: "Go to setting") {
+        let popUp = PopUpWithImageView(imageName: "warning", title: "Please use biometrics to authentication.", okButtonString: "Go to setting") {
                 DispatchQueue.main.async {
                     UIApplication.shared.openURL(URL(string: UIApplication.openSettingsURLString)!)
                 }
@@ -62,7 +62,7 @@ class ViewController: UIViewController {
     }
        
     private func checkFace(){
-        let popUp = PopUpWithImageView(imageName: "checkmark_circle", title: "Please use biometrics to authentication.", okButtonString: "Go to setting") {
+        let popUp = PopUpWithImageView(imageName: "warning", title: "Please use biometrics to authentication.", okButtonString: "Go to setting") {
             if let url = URL(string: "App-Prefs:root=TOUCHID_PASSCODE") {
 //                    UIApplication.shared.openURL(url)
                 UIApplication.shared.openURL(URL(string: UIApplication.openSettingsURLString)!)

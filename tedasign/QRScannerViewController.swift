@@ -228,7 +228,7 @@ class QRScannerViewController: UIViewController, UIImagePickerControllerDelegate
 //                    DispatchQueue.main.async {
 //                        self.present(alert, animated: true, completion: nil)
 //                    }
-                    let popUp = PopUpWithImageView(imageName: "checkmark_circle", title: "QrCode Invalid", okButtonString: "CLOSE") {
+                    let popUp = PopUpWithImageView(imageName: "x_circle", title: "QrCode Invalid", okButtonString: "CLOSE") {
                         if(self.captureSession.isRunning == false) {
                             self.captureSession.commitConfiguration()
                             self.captureSession.startRunning()
@@ -335,7 +335,7 @@ class QRScannerViewController: UIViewController, UIImagePickerControllerDelegate
 //        )
 //        present(alert, animated: true, completion: nil)
         
-        let popUp = PopUpWithImageView(imageName: "checkmark_circle", title: "We need to access your camera for scanning QR code.", okButtonString: "Go to setting") {
+        let popUp = PopUpWithImageView(imageName: "warning", title: "We need to access your camera for scanning QR code.", okButtonString: "Go to setting") {
             DispatchQueue.main.async {
                 UIApplication.shared.openURL(URL(string: UIApplication.openSettingsURLString)!)
             }
