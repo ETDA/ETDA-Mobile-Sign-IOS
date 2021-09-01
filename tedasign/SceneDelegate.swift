@@ -22,6 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             if urlinfo?.host != nil && urlinfo?.host! == "qrcode" {
                 let qr = urlinfo?.pathComponents[1].base64Decoded()!
                 AppDelegate.qrcode = qr!
+                processVC()
             }
         }
         
@@ -71,8 +72,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 print("qrcode = \(context.url.pathComponents[1])")
                 let qr = context.url.pathComponents[1].base64Decoded()!
                 AppDelegate.qrcode = qr
+                processVC()
             }
           }
+    }
+    
+    func processVC(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil);
+        let vc = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController;
+        let hasKey = vc.checkFirst()
+        if hasKey {
+            let vc = storyboard.instantiateViewController(withIdentifier: "MainController") as! MainController;
+            let rootVC = self.window?.rootViewController as! UINavigationController
+            rootVC.popViewController(animated: false)
+            rootVC.pushViewController(vc, animated: false)
+        } else {
+            let rootVC = self.window?.rootViewController as! UINavigationController
+            rootVC.popViewController(animated: false)
+        }
     }
 }
 

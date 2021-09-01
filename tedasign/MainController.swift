@@ -62,6 +62,7 @@ class MainController: UIViewController,UITableViewDataSource ,UITableViewDelegat
         DispatchQueue.main.async {
             self.supportedBiometricType()
         }
+        checkQR()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -196,7 +197,8 @@ class MainController: UIViewController,UITableViewDataSource ,UITableViewDelegat
 
             if(self.mListKey.count == 0) {
                 DispatchQueue.main.async {
-                    self.navigationController?.popViewController(animated: true)
+                    //self.navigationController?.popViewController(animated: true)
+                    self.navigationController?.popToRootViewController(animated: true)
                 }
             } else {
                 self.tableView.reloadData()
@@ -356,7 +358,11 @@ extension MainController: UIDocumentPickerDelegate {
         DispatchQueue.main.async {
             self.supportedBiometricType()
         }
-        print("viewDidBecomeActive ")
+        print("MainViewDidBecomeActive ")
+        checkQR()
+    }
+    
+    func checkQR() {
         let qr = AppDelegate.qrcode
         if qr.count >= 1 {
             processQR(qr: qr)
@@ -377,6 +383,7 @@ extension MainController: UIDocumentPickerDelegate {
             }
         } touchCancel: {
             print("user cancel")
+            
         }
             popUp.show()
         }
