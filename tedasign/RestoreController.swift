@@ -129,7 +129,7 @@ class RestoreViewController: UIViewController, UITableViewDataSource, UITableVie
                 print("Login Successed!")
                 self.tvEmail.text = user?.profile?.email
                 
-                let additionalScopes = [kGTLRAuthScopeDriveFile, kGTLRAuthScopeDrive, kGTLRAuthScopeDriveAppdata, kGTLRAuthScopeDriveMetadata, kGTLRAuthScopeDriveScripts]
+                let additionalScopes = [kGTLRAuthScopeDriveFile, kGTLRAuthScopeDriveAppdata]
                 GIDSignIn.sharedInstance.addScopes(additionalScopes, presenting: self) { user, error in
                     guard error == nil else { self.progressHUD.hide(); return }
                     guard let user = user else { self.progressHUD.hide(); return }

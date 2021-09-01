@@ -136,7 +136,7 @@ class ImportKeyViewController: UIViewController,UITextFieldDelegate {
                 //self.service.authorizer = user?.authentication.fetcherAuthorizer()
                 print("Login Successed!")
                 
-                let additionalScopes = [kGTLRAuthScopeDriveFile, kGTLRAuthScopeDrive, kGTLRAuthScopeDriveAppdata, kGTLRAuthScopeDriveMetadata, kGTLRAuthScopeDriveScripts]
+                let additionalScopes = [kGTLRAuthScopeDriveFile, kGTLRAuthScopeDriveAppdata]
                 GIDSignIn.sharedInstance.addScopes(additionalScopes, presenting: self) { user, error in
                     guard error == nil else { self.navigationController?.popViewController(animated: true); return }
                     guard let user = user else { self.navigationController?.popViewController(animated: true); return }

@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     static var isFaceFirst = true
 
     static var navigationBarSize = 80
-    static var signInConfig = GIDConfiguration.init(clientID: "38584293763-pv320l884egmt4984hjcphku3bai8imk.apps.googleusercontent.com")
+    static var signInConfig = GIDConfiguration.init(clientID: "122602631742-skjdl0ekjj4begr2928spag01nfsivo0.apps.googleusercontent.com")
     var window: UIWindow?
     
     static var qrcode = ""
