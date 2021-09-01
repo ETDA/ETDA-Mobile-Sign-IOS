@@ -131,27 +131,23 @@ class ImportKeyViewController: UIViewController,UITextFieldDelegate {
         
         //Sign to google account
         //GIDSignIn.sharedInstance()?.signIn()
-        GIDSignIn.sharedInstance.signIn(with: AppDelegate.signInConfig, presenting: self) { user, error in
+        let additionalScopes = [kGTLRAuthScopeDriveFile, kGTLRAuthScopeDriveAppdata]
+        GIDSignIn.sharedInstance.signIn(with: AppDelegate.signInConfig, presenting: self, hint: "Google SignIn", scopes:additionalScopes) { user, error in
             if (error == nil) {
                 //self.service.authorizer = user?.authentication.fetcherAuthorizer()
                 print("Login Successed!")
-                
-                let additionalScopes = [kGTLRAuthScopeDriveFile, kGTLRAuthScopeDriveAppdata]
-                GIDSignIn.sharedInstance.addScopes(additionalScopes, presenting: self) { user, error in
-                    guard error == nil else { self.navigationController?.popViewController(animated: true); return }
-                    guard let user = user else { self.navigationController?.popViewController(animated: true); return }
+                guard error == nil else { self.navigationController?.popViewController(animated: true); return }
+                guard let user = user else { self.navigationController?.popViewController(animated: true); return }
 
-                    self.service.authorizer = user.authentication.fetcherAuthorizer()
+                self.service.authorizer = user.authentication.fetcherAuthorizer()
                     
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil);
-                    let vc = storyboard.instantiateViewController(withIdentifier: "BackupViewController") as! BackupViewController;
-                    vc.dataImport = self.dataImport
-                    vc.name = self.nameKey
-                    vc.drive = self.drive
-                    DispatchQueue.main.async {
-                        //               self.present(vc, animated: true, completion: nil)
-                        self.navigationController?.pushViewController(vc, animated: true)
-                    }
+                let storyboard = UIStoryboard(name: "Main", bundle: nil);
+                let vc = storyboard.instantiateViewController(withIdentifier: "BackupViewController") as! BackupViewController;
+                vc.dataImport = self.dataImport
+                vc.name = self.nameKey
+                vc.drive = self.drive
+                DispatchQueue.main.async {
+                    self.navigationController?.pushViewController(vc, animated: true)
                 }
             } else {
                 print("Login Failed")

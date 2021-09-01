@@ -118,7 +118,8 @@ class RestoreViewController: UIViewController, UITableViewDataSource, UITableVie
         
         //Sign to google account
         //GIDSignIn.sharedInstance()?.signIn()
-        GIDSignIn.sharedInstance.signIn(with: AppDelegate.signInConfig, presenting: self) { user, error in
+        let additionalScopes = [kGTLRAuthScopeDriveFile, kGTLRAuthScopeDriveAppdata]
+        GIDSignIn.sharedInstance.signIn(with: AppDelegate.signInConfig, presenting: self, hint: "Google SignIn", scopes:additionalScopes) { user, error in
             if let _ = error {
                 self.service.authorizer = nil
                 print("Login Failed")
@@ -127,17 +128,10 @@ class RestoreViewController: UIViewController, UITableViewDataSource, UITableVie
             } else {
                 //self.service.authorizer = user?.authentication.fetcherAuthorizer()
                 print("Login Successed!")
-                self.tvEmail.text = user?.profile?.email
-                
-                let additionalScopes = [kGTLRAuthScopeDriveFile, kGTLRAuthScopeDriveAppdata]
-                GIDSignIn.sharedInstance.addScopes(additionalScopes, presenting: self) { user, error in
-                    guard error == nil else { self.progressHUD.hide(); return }
-                    guard let user = user else { self.progressHUD.hide(); return }
-
-                    self.service.authorizer = user.authentication.fetcherAuthorizer()
-                    self.getAllfolders()
-                }
-                
+                guard let user = user else { self.progressHUD.hide(); return }
+                self.tvEmail.text = user.profile?.email
+                self.service.authorizer = user.authentication.fetcherAuthorizer()
+                self.getAllfolders()
             }
           }
     }
