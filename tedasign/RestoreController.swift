@@ -147,6 +147,7 @@ class RestoreViewController: UIViewController, UITableViewDataSource, UITableVie
            if let filesList : GTLRDrive_FileList = files as? GTLRDrive_FileList {
                if let filesShow : [GTLRDrive_File] = filesList.files {
                    print("files \(filesShow)")
+                self.progressHUD.hide()
                    for ArrayList in filesShow {
                        let name = ArrayList.name ?? ""
                        let id = ArrayList.identifier ?? ""
