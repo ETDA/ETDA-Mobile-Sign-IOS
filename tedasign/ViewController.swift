@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     var error: NSError?
     var isDocumentPickerPresented = false
     private var registeredToBackgroundEvents = false
-
+    var detectSharePopUpAreShowing = false
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.backButtonDisplayMode = .minimal
@@ -108,6 +108,11 @@ class ViewController: UIViewController {
             selector: #selector(viewDidBecomeActive),
             name: UIApplication.didBecomeActiveNotification, object: nil)
             registeredToBackgroundEvents = true
+            
+            // first load
+            if(mListKey.isEmpty){
+                processShareFile()
+            }
         }
     }
     
@@ -125,7 +130,9 @@ class ViewController: UIViewController {
         //    self.supportedBiometricType()
         //}
         print("viewDidBecomeActive ")
-
+        if(mListKey.isEmpty){
+            processShareFile()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -150,7 +157,36 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
 //        checkFace()
 //        checkFace()
-
+        print("ViewController viewDidAppear")
+//        if(mListKey.isEmpty){
+//            processShareFile()
+//        }
+    }
+    
+    func processShareFile(){
+        if !detectSharePopUpAreShowing {
+            let shareUserDefaults = UserDefaults(suiteName: "group.th.or.tedasign")!
+            if shareUserDefaults.value(forKey: "fileData") != nil {
+                if let data = shareUserDefaults.value(forKey: "fileData") as? Data {
+                    try? data.write(to: AppDelegate.shareFilePath)
+                    print("saved share file to \(AppDelegate.shareFilePath)")
+                    shareUserDefaults.removeObject(forKey: "fileData")
+                }
+            }
+            
+            if FileManager.default.fileExists(atPath: AppDelegate.shareFilePath.path) {
+                detectSharePopUpAreShowing = true
+                let popUp = PopUpTwoButton(imageName: nil, title: "ตรวจพบไฟล์ p12 ใหม่ในระบบ", message: "ต้องการ import key จากไฟล์นี้หรือไม่", acceptButtonString: "IMPORT KEY", cancelButtonString: "CANCEL") {
+                    self.detectSharePopUpAreShowing = false
+                    AppDelegate.importingKeyFromShareFile = true
+                    self.documentFromURL(pickedURL: AppDelegate.shareFilePath)
+                } touchCancel: {
+                    self.detectSharePopUpAreShowing = false
+                    try? FileManager.default.removeItem(atPath: AppDelegate.shareFilePath.path)
+                }
+                popUp.show()
+            }
+        }
     }
     
     public func checkFirst() -> Bool{

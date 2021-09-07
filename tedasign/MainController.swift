@@ -20,7 +20,7 @@ class MainController: UIViewController,UITableViewDataSource ,UITableViewDelegat
     
     var isDocumentPickerPresented = false
     private var registeredToBackgroundEvents = false
-
+    var detectSharePopUpAreShowing = false
     var mListKey:[String] = []
     
     func barbuttomStyle() {
@@ -360,6 +360,7 @@ extension MainController: UIDocumentPickerDelegate {
         }
         print("MainViewDidBecomeActive ")
         checkQR()
+        processShareFile()
     }
     
     func checkQR() {
@@ -386,6 +387,32 @@ extension MainController: UIDocumentPickerDelegate {
             
         }
             popUp.show()
+        }
+    }
+    
+    func processShareFile(){
+        if !detectSharePopUpAreShowing {
+            let shareUserDefaults = UserDefaults(suiteName: "group.th.or.tedasign")!
+            if shareUserDefaults.value(forKey: "fileData") != nil {
+                if let data = shareUserDefaults.value(forKey: "fileData") as? Data {
+                    try? data.write(to: AppDelegate.shareFilePath)
+                    print("saved share file to \(AppDelegate.shareFilePath)")
+                    shareUserDefaults.removeObject(forKey: "fileData")
+                }
+            }
+            
+            if FileManager.default.fileExists(atPath: AppDelegate.shareFilePath.path) {
+                detectSharePopUpAreShowing = true
+                let popUp = PopUpTwoButton(imageName: nil, title: "ตรวจพบไฟล์ p12 ใหม่ในระบบ", message: "ต้องการ import key จากไฟล์นี้หรือไม่", acceptButtonString: "IMPORT KEY", cancelButtonString: "CANCEL") {
+                    self.detectSharePopUpAreShowing = false
+                    AppDelegate.importingKeyFromShareFile = true
+                    self.documentFromURL(pickedURL: AppDelegate.shareFilePath)
+                } touchCancel: {
+                    self.detectSharePopUpAreShowing = false
+                    try? FileManager.default.removeItem(atPath: AppDelegate.shareFilePath.path)
+                }
+                popUp.show()
+            }
         }
     }
 }

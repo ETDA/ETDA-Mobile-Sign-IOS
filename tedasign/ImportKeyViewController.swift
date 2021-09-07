@@ -471,6 +471,10 @@ class ImportKeyViewController: UIViewController,UITextFieldDelegate {
     }// .End func
     
     func showConfirmBackupOrNot(){
+        if AppDelegate.importingKeyFromShareFile {
+            AppDelegate.importingKeyFromShareFile = false
+            try? FileManager.default.removeItem(atPath: AppDelegate.shareFilePath.path)
+        }
         
         if(isRestore){
             showConfirmRestoreKey()

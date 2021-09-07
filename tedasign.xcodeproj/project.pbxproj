@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		27CA754003F6041C7E944ADC /* Pods_tedasign.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DCE19F54274455CBFB8CDC /* Pods_tedasign.framework */; };
-		2A8D20ED26BB2492004B042E /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8D20EC26BB2492004B042E /* ShareViewController.swift */; };
-		2A8D20F026BB2492004B042E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A8D20EE26BB2492004B042E /* MainInterface.storyboard */; };
-		2A8D20F426BB2492004B042E /* Share.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2A8D20EA26BB2492004B042E /* Share.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2A6F3A6B26E67CC300D715F7 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6F3A6A26E67CC300D715F7 /* ShareViewController.swift */; };
+		2A6F3A6E26E67CC300D715F7 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A6F3A6C26E67CC300D715F7 /* MainInterface.storyboard */; };
+		2A6F3A7226E67CC300D715F7 /* Share.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2A6F3A6826E67CC300D715F7 /* Share.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2A734B2C26E64FC600DE25EC /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A734B2B26E64FC600DE25EC /* UserDefaultsExtension.swift */; };
 		92E617D72698A2B800444A02 /* PopUpWithImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92E617D62698A2B800444A02 /* PopUpWithImageView.xib */; };
 		92E617D92698A2C500444A02 /* PopUpWithImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E617D82698A2C500444A02 /* PopUpWithImageView.swift */; };
 		92E617DB2698A92E00444A02 /* PopUpTwoButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92E617DA2698A92E00444A02 /* PopUpTwoButton.xib */; };
@@ -46,12 +47,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2A8D20F226BB2492004B042E /* PBXContainerItemProxy */ = {
+		2A6F3A7026E67CC300D715F7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9C6F4418268A2E1800CB1F9E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 2A8D20E926BB2492004B042E;
-			remoteInfo = Import;
+			remoteGlobalIDString = 2A6F3A6726E67CC300D715F7;
+			remoteInfo = Share;
 		};
 		9C6F443A268A2E1D00CB1F9E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -76,7 +77,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				2A8D20F426BB2492004B042E /* Share.appex in Embed App Extensions */,
+				2A6F3A7226E67CC300D715F7 /* Share.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -85,10 +86,15 @@
 
 /* Begin PBXFileReference section */
 		27B0D88DE3B30151F069391A /* Pods-tedasign-tedasignUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tedasign-tedasignUITests.release.xcconfig"; path = "Target Support Files/Pods-tedasign-tedasignUITests/Pods-tedasign-tedasignUITests.release.xcconfig"; sourceTree = "<group>"; };
-		2A8D20EA26BB2492004B042E /* Share.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Share.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A8D20EC26BB2492004B042E /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
-		2A8D20EF26BB2492004B042E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		2A8D20F126BB2492004B042E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A6F3A6826E67CC300D715F7 /* Share.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Share.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A6F3A6A26E67CC300D715F7 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		2A6F3A6D26E67CC300D715F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		2A6F3A6F26E67CC300D715F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A734B2B26E64FC600DE25EC /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
+		2A734B3326E652B000DE25EC /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		2A734B3626E652B000DE25EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		2A734B3826E652B000DE25EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A734B3F26E678D000DE25EC /* Share.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Share.entitlements; sourceTree = "<group>"; };
 		31B04F8BABA67384798DF7A9 /* Pods-tedasign-tedasignUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tedasign-tedasignUITests.debug.xcconfig"; path = "Target Support Files/Pods-tedasign-tedasignUITests/Pods-tedasign-tedasignUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		58B5E6129E745D868CBF5223 /* Pods-tedasignTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tedasignTests.debug.xcconfig"; path = "Target Support Files/Pods-tedasignTests/Pods-tedasignTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7DD9B7D4A39DFAF66DFB16F2 /* Pods-tedasign.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tedasign.debug.xcconfig"; path = "Target Support Files/Pods-tedasign/Pods-tedasign.debug.xcconfig"; sourceTree = "<group>"; };
@@ -139,7 +145,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2A8D20E726BB2492004B042E /* Frameworks */ = {
+		2A6F3A6526E67CC300D715F7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -173,14 +179,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2A8D20EB26BB2492004B042E /* Import */ = {
+		2A6F3A6926E67CC300D715F7 /* Share */ = {
 			isa = PBXGroup;
 			children = (
-				2A8D20EC26BB2492004B042E /* ShareViewController.swift */,
-				2A8D20EE26BB2492004B042E /* MainInterface.storyboard */,
-				2A8D20F126BB2492004B042E /* Info.plist */,
+				2A6F3A6A26E67CC300D715F7 /* ShareViewController.swift */,
+				2A6F3A6C26E67CC300D715F7 /* MainInterface.storyboard */,
+				2A6F3A6F26E67CC300D715F7 /* Info.plist */,
 			);
-			path = Import;
+			path = Share;
+			sourceTree = "<group>";
+		};
+		2A734B3226E652B000DE25EC /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				2A734B3F26E678D000DE25EC /* Share.entitlements */,
+				2A734B3326E652B000DE25EC /* ShareViewController.swift */,
+				2A734B3526E652B000DE25EC /* MainInterface.storyboard */,
+				2A734B3826E652B000DE25EC /* Info.plist */,
+			);
+			path = Share;
 			sourceTree = "<group>";
 		};
 		631981354020A6BADA8A09E6 /* Pods */ = {
@@ -224,6 +241,7 @@
 			children = (
 				92F69CDC2698789D006AB1A1 /* UIViewExtension.swift */,
 				92F69CDE26987DB7006AB1A1 /* UIColorExtension.swift */,
+				2A734B2B26E64FC600DE25EC /* UserDefaultsExtension.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -273,7 +291,8 @@
 				9C6F4422268A2E1800CB1F9E /* tedasign */,
 				9C6F443C268A2E1D00CB1F9E /* tedasignTests */,
 				9C6F4447268A2E1D00CB1F9E /* tedasignUITests */,
-				2A8D20EB26BB2492004B042E /* Import */,
+				2A734B3226E652B000DE25EC /* Share */,
+				2A6F3A6926E67CC300D715F7 /* Share */,
 				9C6F4421268A2E1800CB1F9E /* Products */,
 				631981354020A6BADA8A09E6 /* Pods */,
 				7DDDE4E7D4376C893C6CC1D1 /* Frameworks */,
@@ -286,7 +305,7 @@
 				9C6F4420268A2E1800CB1F9E /* tedasign.app */,
 				9C6F4439268A2E1D00CB1F9E /* tedasignTests.xctest */,
 				9C6F4444268A2E1D00CB1F9E /* tedasignUITests.xctest */,
-				2A8D20EA26BB2492004B042E /* Share.appex */,
+				2A6F3A6826E67CC300D715F7 /* Share.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -354,21 +373,21 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2A8D20E926BB2492004B042E /* Share */ = {
+		2A6F3A6726E67CC300D715F7 /* Share */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2A8D20F526BB2492004B042E /* Build configuration list for PBXNativeTarget "Share" */;
+			buildConfigurationList = 2A6F3A7526E67CC300D715F7 /* Build configuration list for PBXNativeTarget "Share" */;
 			buildPhases = (
-				2A8D20E626BB2492004B042E /* Sources */,
-				2A8D20E726BB2492004B042E /* Frameworks */,
-				2A8D20E826BB2492004B042E /* Resources */,
+				2A6F3A6426E67CC300D715F7 /* Sources */,
+				2A6F3A6526E67CC300D715F7 /* Frameworks */,
+				2A6F3A6626E67CC300D715F7 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Share;
-			productName = Import;
-			productReference = 2A8D20EA26BB2492004B042E /* Share.appex */;
+			productName = Share;
+			productReference = 2A6F3A6826E67CC300D715F7 /* Share.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		9C6F441F268A2E1800CB1F9E /* tedasign */ = {
@@ -385,7 +404,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				2A8D20F326BB2492004B042E /* PBXTargetDependency */,
+				2A6F3A7126E67CC300D715F7 /* PBXTargetDependency */,
 			);
 			name = tedasign;
 			productName = tedasign;
@@ -440,7 +459,7 @@
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
-					2A8D20E926BB2492004B042E = {
+					2A6F3A6726E67CC300D715F7 = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
 					9C6F441F268A2E1800CB1F9E = {
@@ -473,17 +492,17 @@
 				9C6F441F268A2E1800CB1F9E /* tedasign */,
 				9C6F4438268A2E1D00CB1F9E /* tedasignTests */,
 				9C6F4443268A2E1D00CB1F9E /* tedasignUITests */,
-				2A8D20E926BB2492004B042E /* Share */,
+				2A6F3A6726E67CC300D715F7 /* Share */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2A8D20E826BB2492004B042E /* Resources */ = {
+		2A6F3A6626E67CC300D715F7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A8D20F026BB2492004B042E /* MainInterface.storyboard in Resources */,
+				2A6F3A6E26E67CC300D715F7 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,11 +639,11 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2A8D20E626BB2492004B042E /* Sources */ = {
+		2A6F3A6426E67CC300D715F7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A8D20ED26BB2492004B042E /* ShareViewController.swift in Sources */,
+				2A6F3A6B26E67CC300D715F7 /* ShareViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,6 +665,7 @@
 				92E617D92698A2C500444A02 /* PopUpWithImageView.swift in Sources */,
 				E2957EC32692FE6D006EF34F /* ListKeyViewController.swift in Sources */,
 				9C10606026918E5B003AC183 /* ImportKeyViewController.swift in Sources */,
+				2A734B2C26E64FC600DE25EC /* UserDefaultsExtension.swift in Sources */,
 				9C6F4428268A2E1800CB1F9E /* ViewController.swift in Sources */,
 				9C10605626918CCB003AC183 /* ATGoogleDrive.swift in Sources */,
 				9C10605726918CCB003AC183 /* DocumentPicker.swift in Sources */,
@@ -676,10 +696,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2A8D20F326BB2492004B042E /* PBXTargetDependency */ = {
+		2A6F3A7126E67CC300D715F7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2A8D20E926BB2492004B042E /* Share */;
-			targetProxy = 2A8D20F226BB2492004B042E /* PBXContainerItemProxy */;
+			target = 2A6F3A6726E67CC300D715F7 /* Share */;
+			targetProxy = 2A6F3A7026E67CC300D715F7 /* PBXContainerItemProxy */;
 		};
 		9C6F443B268A2E1D00CB1F9E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -694,10 +714,18 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2A8D20EE26BB2492004B042E /* MainInterface.storyboard */ = {
+		2A6F3A6C26E67CC300D715F7 /* MainInterface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2A8D20EF26BB2492004B042E /* Base */,
+				2A6F3A6D26E67CC300D715F7 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		2A734B3526E652B000DE25EC /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A734B3626E652B000DE25EC /* Base */,
 			);
 			name = MainInterface.storyboard;
 			sourceTree = "<group>";
@@ -721,18 +749,19 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		2A8D20F626BB2492004B042E /* Debug */ = {
+		2A6F3A7326E67CC300D715F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Share/Share.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RG2VUUK6T2;
-				INFOPLIST_FILE = Import/Info.plist;
+				INFOPLIST_FILE = Share/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.etda.tedasign.share;
+				PRODUCT_BUNDLE_IDENTIFIER = th.or.etda.tedasign.dev.Share;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -740,18 +769,19 @@
 			};
 			name = Debug;
 		};
-		2A8D20F726BB2492004B042E /* Release */ = {
+		2A6F3A7426E67CC300D715F7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Share/Share.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RG2VUUK6T2;
-				INFOPLIST_FILE = Import/Info.plist;
+				INFOPLIST_FILE = Share/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.etda.tedasign.share;
+				PRODUCT_BUNDLE_IDENTIFIER = th.or.etda.tedasign.dev.Share;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -891,7 +921,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.etda.tedasign;
+				PRODUCT_BUNDLE_IDENTIFIER = th.or.etda.tedasign.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "tedasign/tedasign-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -916,7 +946,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.etda.tedasign;
+				PRODUCT_BUNDLE_IDENTIFIER = th.or.etda.tedasign.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "tedasign/tedasign-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -1015,11 +1045,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2A8D20F526BB2492004B042E /* Build configuration list for PBXNativeTarget "Share" */ = {
+		2A6F3A7526E67CC300D715F7 /* Build configuration list for PBXNativeTarget "Share" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2A8D20F626BB2492004B042E /* Debug */,
-				2A8D20F726BB2492004B042E /* Release */,
+				2A6F3A7326E67CC300D715F7 /* Debug */,
+				2A6F3A7426E67CC300D715F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
