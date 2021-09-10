@@ -28,7 +28,7 @@ class ShareViewController: UIViewController {
               guard error == nil else { return }
 
                 if let url = data as? URL {
-                    if url.absoluteString.hasSuffix(".p12") || url.absoluteString.hasSuffix(".P12") {
+                    if url.absoluteString.uppercased().hasSuffix(".P12") || url.absoluteString.uppercased().hasSuffix(".PFX"){
                         print("url = \(url.absoluteString)")
                         if let fileData = try? Data(contentsOf: url) {
                             self.save(fileData, key: "fileData", value: fileData)

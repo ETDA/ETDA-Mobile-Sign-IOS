@@ -400,10 +400,10 @@ extension MainController: UIDocumentPickerDelegate {
                     shareUserDefaults.removeObject(forKey: "fileData")
                 }
             }
-            
+
             if FileManager.default.fileExists(atPath: AppDelegate.shareFilePath.path) {
                 detectSharePopUpAreShowing = true
-                let popUp = PopUpTwoButton(imageName: nil, title: "ตรวจพบไฟล์ p12 ใหม่ในระบบ", message: "ต้องการ import key จากไฟล์นี้หรือไม่", acceptButtonString: "IMPORT KEY", cancelButtonString: "CANCEL") {
+                let popUp = PopUpTwoButton(imageName: nil, title: "ตรวจพบไฟล์ p12/pfx ใหม่ในระบบ", message: "ต้องการ import key จากไฟล์นี้หรือไม่", acceptButtonString: "IMPORT KEY", cancelButtonString: "CANCEL") {
                     self.detectSharePopUpAreShowing = false
                     AppDelegate.importingKeyFromShareFile = true
                     self.documentFromURL(pickedURL: AppDelegate.shareFilePath)
