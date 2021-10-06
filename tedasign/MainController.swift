@@ -372,9 +372,11 @@ extension MainController: UIDocumentPickerDelegate {
     }
     
     func processQR(qr:String) {
+        print("QR = \(qr)")
         let strQRValArr =  qr.components(separatedBy: ";")
         if(strQRValArr.count >= 3){
         let str_ref_number =  strQRValArr[3]
+        print("QR = \(strQRValArr)")
         let popUp = PopUpTwoButton(imageName: nil, title: "ข้อมูลเอกสารที่ลงนาม", message: "หมายเลข Reference : "+str_ref_number, acceptButtonString: "CONFIRM", cancelButtonString: "CANCEL") {
             let storyboard = UIStoryboard(name: "Main", bundle: nil);
             let vc = storyboard.instantiateViewController(withIdentifier: "ListKeyViewController") as! ListKeyViewController;

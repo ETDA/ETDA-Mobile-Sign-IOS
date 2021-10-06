@@ -488,6 +488,9 @@ class ListKeyViewController: UIViewController, UITableViewDataSource ,UITableVie
                         let popUp = PopUpFinishSign(title: "คุณได้ลงนามเอกสาร", dateString: "วันที่ "+CurrentTimeStamp(dateFormatter: "dd-MM-yyyy HH:mm"), acceptButtonString: "รับทราบ", cancelButtonString: "ปิดแจ้งเตือน", touchAccept: {
                             self.navigationController?.popToRootViewController(animated: true)
 
+//                            if let url = URL(string: "https://api-uat.teda.th/tedasign/?request_id=\(strQRValArr[1])") {
+//                                UIApplication.shared.open(url)
+//                            }
                         }, touchCancel: {
                             self.navigationController?.popToRootViewController(animated: true)
 
