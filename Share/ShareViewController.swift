@@ -45,7 +45,9 @@ class ShareViewController: UIViewController {
       }
 
     private func save(_ data: Data, key: String, value: Any) {
-      let userDefaults = UserDefaults(suiteName: "group.th.or.tedasign")!
+        let userDefaults = UserDefaults(suiteName: "group.th.or.etda.tedasign")!
+        //let userDefaults = UserDefaults(suiteName: "group.th.or.tedasign")!
+        //
       userDefaults.set(data, forKey: key)
     }
     

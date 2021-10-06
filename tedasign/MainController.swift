@@ -394,7 +394,7 @@ extension MainController: UIDocumentPickerDelegate {
     
     func processShareFile(){
         if !detectSharePopUpAreShowing {
-            let shareUserDefaults = UserDefaults(suiteName: "group.th.or.tedasign")!
+            let shareUserDefaults = UserDefaults(suiteName: "group.th.or.etda.tedasign")!
             if shareUserDefaults.value(forKey: "fileData") != nil {
                 if let data = shareUserDefaults.value(forKey: "fileData") as? Data {
                     try? data.write(to: AppDelegate.shareFilePath)
