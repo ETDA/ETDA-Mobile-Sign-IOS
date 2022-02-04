@@ -1,0 +1,6 @@
+framework module Pods_tedasign_tedasignUITests {
+  umbrella header "Pods-tedasign-tedasignUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
